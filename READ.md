@@ -27,7 +27,7 @@ git config --global user.username "username"
 console.log("")
 ```
 
-* Sirve para poder empezar a udar en control de versiones (Git) en nuestra carpeta
+* Sirve para poder empezar a usar en control de versiones (Git) en nuestra carpeta
 
 ```bash
 git init
@@ -36,4 +36,31 @@ git init
 
 ```bash
 git status
+```
+* Guarda todos los archivos 
+
+```bash
+git add .
+```
+* Guarda un archivo especifico 
+
+```bash
+git add READ.md
+```
+* Para crear el registro de los cambios realizados en el MAIN
+
+```bash
+git commit -m "Creando mi primer commit"
+```
+
+* Muestra el historial de cambios guardados en commit con su ID
+
+```bash
+git log
+```
+
+* Muestra los cambios especificos utilizando el ID 
+
+```bash
+git show "ID del commit"
 ```
