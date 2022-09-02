@@ -64,3 +64,24 @@ git log
 ```bash
 git show "ID del commit"
 ```
+* Conecta en remotamente el proyecto
+
+```bash
+git remote add origin https://github.com/Yoel-Aliaga/codigo-10.git
+```
+* Para ver a que url esta vinculado nuestro proyecto
+
+```bash
+git remote -v
+```
+* Cambiar de url
+
+```bash
+git remote set-url origin  url
+```
+
+* Sube los archivos a GitHub
+```bash
+git push origin main
+```
+
