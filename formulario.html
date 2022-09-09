@@ -7,27 +7,81 @@
     <title>Formulario</title>
 </head>
 <body>
-    
+ 
+
+
 <form action="">
 
 <p>
-    <input type="text" placeholder="Ingrese su nombre">
+
+    <!-- el ID es identificador  -->
+    <!-- name : identificador para enviar datros al backend -->
+    <!-- value es el dato del navegador -->
+    <!-- el atributo disabled no permite modificar el contenido y tampoco envia la informacion a la BD -->
+    <input 
+    id = "input-nombre"
+    value ="pepe"
+    type="text" 
+    required
+    name="nombre"
+    placeholder="Ingrese su nombre"
+    disabled   
+    >
 </p>
 
 <p>
-    <input type="number" placeholder="Ingrese su edad">
+    <input 
+    value ="" 
+    type="number" 
+    required
+    name=" dni"
+    placeholder="Ingrese su DNI"    
+    maxlength="8"
+    >
+</p>
+
+
+<p>
+    <!-- readonly permite enviar el dato y no modificar el contenido -->
+    <input 
+    value ="9" 
+    type="number" 
+    required
+    name=" edad"
+    placeholder="Ingrese su edad"
+    readonly
+    >
 </p>
 
 <p>
-    <input type="password" placeholder="Ingrese contraseña">
+    <input 
+    value ="123456" 
+    type="password" 
+    required
+    name="password"
+    placeholder="Ingrese contraseña"
+    >
 </p>
 
 <p>
-    <input type="email" placeholder="Ingrese correo">
+    <input 
+    value ="pepe@gmail.com" 
+    type="email" 
+    required
+    name="email"
+    placeholder="Ingrese correo" 
+    >
 </p>
 
 <p>
-    <input type="date" placeholder="Ingrese fecha">
+    <!-- formato de fechas yyyy-mm-dd -->
+    <input 
+    value ="2022-09-08" 
+    type="date"
+    required
+    name="fecha"
+    placeholder="Ingrese fecha" 
+    >
 </p>
 
 
