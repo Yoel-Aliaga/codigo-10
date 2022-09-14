@@ -18,7 +18,7 @@ git config --global user.email "email"
 *Para configurar el username
 
 ```bash
-git config --global user.username "username"
+git config --global user.name "username"
 ```
 
 *Indica el tipo de lenguaje para dar configuracion en este caso js
