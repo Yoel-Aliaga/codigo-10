@@ -1,0 +1,65 @@
+/* * es todos los elementos */
+
+*
+{
+    /* hace que el border este dentreo del div */
+    box-sizing: border-box;    
+    margin: 0;
+    padding: 0;
+
+}
+
+
+body
+{
+background-color: red;
+font-family: Arial, Helvetica, sans-serif;
+color: #fff;
+}
+
+.padre
+{
+    /* para usar los justify siempre display:flex */
+    display: flex;
+
+
+    height: 100vh;
+    /* cuando un elemento ocupe mas d ela pantalla lo manda a la siguiente linea */
+    flex-wrap: wrap;
+
+    /* alinea los elementos horizontalmente */
+    /* justify-content: center;   */
+
+    /* a la derecha */
+    /* justify-content: flex-end; */
+
+    /* a la izquierda */
+    /* justify-content: start; */
+
+    /* delado a lado sin margenes */
+    /* justify-content: space-between; */
+
+    /* deja espacios iguales a la izquierda y derecha */
+    /* justify-content: space-around; */
+
+    /* los margenes internos y externos son iguales */
+    /* justify-content: space-evenly; */
+
+
+
+
+    /* alineacion vertical */
+    /* las mismas propdades de de justify-content  */
+    align-items: center;
+
+
+}
+
+.hijo
+{
+    width: 25%;
+    height: 100px;
+    border:solid 1px green;
+    background-color: #fff;
+
+}

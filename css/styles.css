@@ -1,3 +1,18 @@
+
+
+
+
+
+/* Usar la fuente que acabamos de importar */
+/* Según los principios de css las fuentes vienen de la PC */
+body
+{
+font-family: 'Poppins', sans-serif;
+}
+
+
+
+
 /* ---------- Selectores ---------- */
 
 /* Selector de elemento - Nivel jerarquico 3*/
