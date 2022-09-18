@@ -1,0 +1,138 @@
+:root {
+  font-family: "Outfit", sans-serif;
+
+  /* font-size: 18px; */
+}
+
+body {
+  background-color: hsl(217, 54%, 11%);
+
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+}
+
+/* contenedor principal centrado */
+.container {
+  background-color: hsl(216, 50%, 16%);
+  width: 90%;
+  /* height: 580px; */
+  height: 70%;
+  display: block;
+  border-radius: 15px;
+}
+
+/* div de la imagen */
+.image {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.img {
+  width: 84%;
+  margin-top: 30px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.img2 {
+  position: absolute;
+  visibility: hidden;
+  border-radius: 10px;
+  margin-top: 160px;
+  cursor: pointer;
+}
+
+/* al pasar el mouse por la imagen 1 afecta a la imagen2 */
+.img:hover + .img2 {
+  visibility: visible;
+}
+
+/* div de los textos */
+.texto {
+  border: 0px solid blueviolet;
+  display: flex;
+  flex-direction: column;
+  margin: 20px 30px 30px 30px;
+}
+
+.texto .title {
+  font-size: 22px;
+  font-weight: 400;
+  margin-top: 5px;
+  color: hsl(0, 0%, 100%);
+}
+
+.title:hover {
+  cursor: pointer;
+  color: hsl(178, 100%, 50%);
+}
+
+.texto .content {
+  font-weight: 300;
+  margin-top: 10px;
+  color: hsl(215, 51%, 70%);
+  line-height: 170%;
+}
+
+.pre {
+  display: flex;
+  color: hsl(0, 0%, 100%);
+  justify-content: space-between;
+  font-weight: 400;
+  margin-top: 15px;
+}
+
+.pre .image-left {
+  color: hsl(178, 100%, 50%);
+  display: inline-flex;
+}
+
+.pre .image-left .price {
+  margin-left: 10px;
+}
+
+.pre .image-right {
+  color: hsl(215, 51%, 70%);
+  display: inline-flex;
+  /* border: 1px solid yellow;     */
+}
+
+.pre .image-right .days {
+  margin-left: 10px;
+}
+
+.linea {
+  margin-top: 20px;
+  border: 1px solid;
+  color: hsl(215, 32%, 27%);
+}
+
+/* autor */
+.autor {
+  display: flex;
+  margin-top: 20px;
+  color: hsl(215, 51%, 70%);
+  /* border: 1px solid yellow; */
+  height: 40px;
+  align-items: center;
+}
+
+.autor img {
+  width: 40px;
+  border: 1px solid hsl(0, 0%, 100%);
+  border-radius: 50px;
+}
+
+.autor .name-autor {
+  margin-left: 15px;
+}
+.autor .name-autor span {
+  color: hsl(0, 0%, 100%);
+}
+.autor .name-autor > span:hover {
+  cursor: pointer;
+  color: hsl(178, 100%, 50%);
+}
