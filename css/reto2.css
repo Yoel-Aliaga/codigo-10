@@ -136,3 +136,29 @@ body {
   cursor: pointer;
   color: hsl(178, 100%, 50%);
 }
+
+@media (min-width: 1440px) {
+  .img {
+    width: 35%;
+    margin-top: 30px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .img:hover + .img2 {
+    visibility: visible;
+    margin-top: 280px;
+  }
+
+  body {
+    align-items: flex-start;
+  }
+
+  .texto {
+    margin: 80px 30px 30px 30px;
+  }
+
+  .autor {
+    justify-content: center;
+  }
+}
