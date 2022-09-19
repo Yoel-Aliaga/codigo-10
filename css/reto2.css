@@ -143,9 +143,9 @@ body {
     margin-top: 30px;
     border-radius: 10px;
     cursor: pointer;
-  }
+}
 
-  .img:hover + .img2 {
+.img:hover + .img2 {
     visibility: visible;
     margin-top: 280px;
   }
