@@ -1,5 +1,6 @@
 :root {
-    font-size: 20px;
+    font-size: 14px;
+    font-family: "Poppins";
   }
   
   /* Vamos a usar la fuente que acabamos de importar */
@@ -8,15 +9,23 @@
   /* Si la primera fuente no funciona va a tomar la de respaldo */
   body {
     padding: 0px;
-    margin: 0px;
+    /* margin: 0px; */
+    margin-left: 15px ;
   }
   
+/* .contenedor{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+} */
+
   h1 {
     color: green;
     background-color: beige;
-    padding: 20px;
+    padding: 2px;
     text-align: center;
-    font-size: 3rem;
+    /* font-size: 14px; */
   }
   
   #div_temas {
@@ -27,48 +36,56 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    gap: 20px;
+    gap: 10px;
   }
   
   .productos {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
-    margin: 0px auto;
+    /* margin: 0px auto; */
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
+
+
   }
   
   .product {
-    width: 80%;
-    height: 400px;
-    min-width: 280px;
-    border: 2px solid blue;
+    width: 250px;
+    height: 250px;
+    border: 1px solid gray;
     border-radius: 10px;
-    position: relative;
+    gap: 10px ;
   }
   .product:hover {
-    border: 4px dashed red;
-    box-shadow: 0px 0px 10px red;
-    cursor: grab;
+    border: 1px solid black;
+    box-shadow: 5px 5px 20px 5px gray ;
+    cursor: pointer;
+    transform: scale(110%);
+    
   }
   .product > img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    object-position: center;
-    position: absolute;
+    width: 90%;
+    height: 120px;
+    /* object-fit: cover; */
+    /* object-position: center; */
+    /* position: absolute; */
     bottom: 0;
+    margin: 10px;
+    border-radius: 10px;
+  
+  
   }
+
   .product:hover > img {
     opacity: 50%;
-    border: 4px solid black;
+    /* border: 4px solid black; */
   }
+ 
   
   /* MD */
-  @media (min-width: 600px) {
+  /* @media (min-width: 600px) {
     .product {
       width: 40%;
     }
@@ -78,14 +95,16 @@
       flex-direction: row;
       
     }
-  }
+  } */
+
   /* LG */
-  @media (min-width: 900px) {
+  
+  /* @media (min-width: 900px) {
     .product {
       width: 30%;
     }
   }
-  
+   */
   
   
   .laptop > h2 {
