@@ -1,0 +1,31 @@
+*{
+margin: 0;
+padding: 0%;
+box-sizing: border-box;
+}
+
+
+body{
+    background-color: hsl(213, 81%, 44%);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.grid-container{
+    background-color:white;
+    height: 100vh;
+    max-width:600px ;
+    padding: 20px;
+    border-radius: 20px;
+    
+}
+
+
+@media(min-width:600px){
+    .grid-container{
+        margin: 40px auto;
+        border-radius: 20px;
+        
+    /* background-color:  hsl(0, 0%, 100%); */
+    }    
+
+}
