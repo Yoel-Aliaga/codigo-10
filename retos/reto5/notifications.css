@@ -1,26 +1,132 @@
 *{
 margin: 0;
-padding: 0%;
+padding: 0;
 box-sizing: border-box;
 }
 
 
 body{
-    background-color: hsl(213, 81%, 44%);
+    background-color: hsl(210, 60%, 98%);
     font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 .grid-container{
+    /* grid-gap: 15px; */
     background-color:white;
     height: 100vh;
     max-width:600px ;
     padding: 20px;
     border-radius: 20px;
+
+    display: grid;
+    grid-template-areas: 
+     "header" "main";
+
+     grid-template-rows: 100px auto;
     
 }
 
+.header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    grid-area: header;
+    
+}
 
-@media(min-width:600px){
+.header .badge{
+    color: white;
+    font-size: 0.7em;
+    padding: 0px 12px;
+    border-radius: 6px;
+    background-color: hsl(219, 85%, 26%);
+}
+
+.header h1{
+    font-size: 1em;
+    /* background-color: blue; */
+
+}
+
+.header a{
+    justify-self: end;
+    color: hsl(219, 14%, 63%);
+}
+
+.header a:hover{
+    color: hsl(219, 85%, 26%);
+    text-decoration: none;
+}
+
+.main{
+    background-color: lightblue;
+    grid-area: main;
+    display: grid;
+    grid-template-rows: repeat(auto-fill, min(auto, 100px));
+    gap: 10px;
+    align-content: flex-start;
+    background-color: hsl(0, 0%, 100%);
+}
+
+.main .card {
+    height: auto;
+    border-radius: 10px;
+    background-color: gray;
+    padding: 10px;
+    display: grid;
+    grid-template-areas: 
+    "avatar content"
+    /* punto es columna vacia */
+    ". time "    ;
+
+    gap: 10px    ;
+    background-color: hsl(211, 68%, 94%);
+    margin-top: 20px;
+    
+}
+
+.main .card .avatar{
+    grid-area: avatar;
+}
+
+.main .card .content{
+    grid-area: 'content';
+}
+
+.main .card .content .text{
+    color: hsl(219, 14%, 63%);
+}
+
+.main .card .time{
+    grid-area: time;
+    /* border: 1px solid red; */
+    color: hsl(219,14%, 63%);
+}
+
+.unread{
+    background-color: hsl(211, 68%, 94%);
+    border-radius: 10px;
+
+}
+
+.unread .text::after{
+
+    
+    /* content:"-    ." ;     */
+    content:" "  url(./assets/images/dot-3.png) ;    
+    /* width: 1px; */
+    /* color: hsl(1, 90%, 64%); */
+    /* border: 0px ; */
+    
+
+    /* background: hsl(1, 90%, 64%); */
+    /* border-radius: 50%; */
+    
+}
+ 
+
+
+@media(min-width: 600px ){
     .grid-container{
         margin: 40px auto;
         border-radius: 20px;
@@ -28,4 +134,13 @@ body{
     /* background-color:  hsl(0, 0%, 100%); */
     }    
 
+    .header h1{
+        font-size: 2em;
+    }
+
+    .main .card {
+        padding: 20px;
+        gap: 10px    ;
+        
+    }
 }
