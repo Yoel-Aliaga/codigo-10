@@ -1,17 +1,13 @@
 window.onload = mostrar;
 
 // const qs
-const qs = (text) =>document.querySelector(text);
+const qs = (text) => document.querySelector(text);
 
 // URL API
 const url = 'https://www.omdbapi.com/?s=avengers&apikey=4b229795&'
 
 // Referencia los objetos
 const container = qs(".container");
-// let title = qs(".title");
-
-// const p = qs(".texto");
-
 
 // function
 async function mostrar(){
