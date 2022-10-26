@@ -1,0 +1,34 @@
+*{
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+
+
+.tasks_container{
+    display: flex;
+    /* justify-content: end;     */
+    /* border:1px solid red; */
+}
+
+.tasks{
+    
+    /* border:1px solid purple; */
+    width: 70%;
+    align-self: center;
+}
+
+
+.controls{
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+}
+.btn{
+    height: 50px;
+    /* border:1px solid green; */
+    align-self: center;
+
+}
