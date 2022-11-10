@@ -2,23 +2,34 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { TaskForm, TaskCard } from "../../components";
 import { get, post, update } from "../../services";
+import { TaskModel } from "../../models/TaskModel";
 
 function Home() {
   const [taskList, setTaskList] = useState([]);
 
   async function getTasks() {
     const tasks = await get();
-    setTaskList(tasks);
+    const tasksModels = tasks.map((task) => {
+      return new TaskModel(
+        task.id,
+        task.name,
+        task.createdAt,
+        task.doneAt,
+        task.deletedAt
+      );
+    });
+    setTaskList(tasksModels);
   }
 
   async function addTask(text) {
-    const newTask = { name: text, status: 1 };
+    const newTask = new TaskModel(null, text);
     await post(newTask);
     await getTasks();
   }
 
-  async function updateTask(id) {
-    const body = { status: 2 };
+  async function updateTask(id, type) {
+    const body =
+      type === "done" ? { doneAt: new Date() } : { deletedAt: new Date() };
     await update(id, body);
     await getTasks();
   }
