@@ -1,8 +1,6 @@
-# Primer dia con Git/GitHub
+# Primer dia con Git/Github
 
-Comando para configurar el usuario y correo 
-
-lista de comando Git
+Lista de comando de git
 
 * Para poder ver la version de Git
 
@@ -10,78 +8,61 @@ lista de comando Git
 git --version
 ```
 
-*Para configurar el correo
+* Para configurar el correo
 
 ```bash
 git config --global user.email "email"
 ```
-*Para configurar el username
+
+* Para poder configurar el username
 
 ```bash
 git config --global user.name "username"
 ```
 
-*Indica el tipo de lenguaje para dar configuracion en este caso js
+* Sirve para poder empezar a usar el control de version (git) en
+nuestra carpeta.
 
-```js
-console.log("")
-```
-
-* Sirve para poder empezar a usar en control de versiones (Git) en nuestra carpeta
+* Esto solo se una vez por carpeta
 
 ```bash
 git init
 ```
-* Para ver el estado de nuestros cambios
 
+* Para ver el estado de nuestros cambios
+  
 ```bash
 git status
 ```
-* Guarda todos los archivos 
+
+* Agrega los archiv a la memoria de la pc
 
 ```bash
-git add .
+git add . 
 ```
-* Guarda un archivo especifico 
+
+* Crear el registro de los cambios realizados
 
 ```bash
-git add READ.md
-```
-* Para crear el registro de los cambios realizados en el MAIN
+git commit -m "comentario"
+````
 
-```bash
-git commit -m "Creando mi primer commit"
-```
+* Poder ver historial de commits
 
-* Muestra el historial de cambios guardados en commit con su ID
+[ ] Git log retorna un `id` con este id vamos
+a poder ver el detalle de los cambios que se
+hicieron en ese commit.
 
 ```bash
 git log
 ```
 
-* Muestra los cambios especificos utilizando el ID 
-
+* Para poder ver el detalle del commit usamos
+  
 ```bash
-git show "ID del commit"
-```
-* Conecta en remotamente el proyecto
-
-```bash
-git remote add origin https://github.com/Yoel-Aliaga/codigo-10.git
-```
-* Para ver a que url esta vinculado nuestro proyecto
-
-```bash
-git remote -v
-```
-* Cambiar de url
-
-```bash
-git remote set-url origin  url
+git show id-de-commit
 ```
 
-* Sube los archivos a GitHub
 ```bash
 git push origin main
 ```
-
