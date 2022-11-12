@@ -34,10 +34,10 @@ const Login = () => {
     //* Si ambos campos esta llenos lo guardamos en local storage
     //* Guardar los datos de email y password
     localStorage.setItem("user", JSON.stringify(user));
-    validateIslogged();
+    validateIsLogged();
   };
 
-const validateIslogged =()=>{
+const validateIsLogged =()=>{
   const user = JSON.parse(localStorage.getItem("user"));
   console.log(user);
 
@@ -47,7 +47,7 @@ const validateIslogged =()=>{
 };
 
 useEffect(()=>{
-  validateIslogged();
+  validateIsLogged();
 },[]);
 
 
