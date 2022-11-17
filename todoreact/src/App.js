@@ -3,13 +3,9 @@ import Router from "./routes";
 
 function App() {
   return (
-    // <div className="container my-5">
-      <AuthProvider>
-        <Router />
-        
-      </AuthProvider>
-
-    // </div>
+    <AuthProvider>
+      <Router />
+    </AuthProvider>
   );
 }
 

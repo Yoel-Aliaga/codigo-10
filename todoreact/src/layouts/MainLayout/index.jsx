@@ -1,18 +1,11 @@
-import { useEffect } from "react";
-import { useNavigate, Outlet, Link } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
+import { Navigate, Outlet, Link } from "react-router-dom";
 
 const MainLayout = () => {
-  const history = useNavigate();
+  const { isAuth, user, logout } = useContext(AuthContext);
 
-  const validateIsLogged = () => {
-    const user = JSON.parse(localStorage.getItem("user"));
-
-    if (!user) history("/login");
-  };
-
-  useEffect(() => {
-    validateIsLogged();
-  }, []);
+  if (!isAuth()) return <Navigate to="/login" />;
 
   return (
     <div>
@@ -30,7 +23,7 @@ const MainLayout = () => {
             <span className="navbar-toggler-icon"></span>
           </button>
           <Link className="navbar-brand" href="/">
-            Todo App
+            {user.getFullDetails()}
           </Link>
           <div className="collapse navbar-collapse" id="navbarTogglerDemo03">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
@@ -42,6 +35,11 @@ const MainLayout = () => {
                 >
                   Perfil
                 </Link>
+              </li>
+              <li className="nav-item">
+                <a href="" className="nav-link active text-danger" onClick={logout}>
+                Logout
+                </a>
               </li>
             </ul>
           </div>
