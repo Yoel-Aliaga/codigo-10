@@ -1,0 +1,56 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+
+model Categoria{
+  // id entero primari key autoincrementada
+  // @ modifica alguna configuracion de la COLUMNA
+  id      Int     @id @default(autoincrement()) 
+  nombre  String  @db.VarChar(100)
+
+  productos Producto []
+  // Cambiar el nombre a la tabla con doble @
+  // doble @@ modifica alguna configuracion de la TABLA
+  @@map("categorias")
+
+}
+
+model Producto{
+  id        Int       @id       @default(autoincrement())
+  nombre    String
+   // el signo ? sirve para indicar que la columna puede o no tener un valor
+  precio    Float?
+  tieneIgv  Boolean   @map ("tiene_igv")
+  // SKU numero unico de identificacion de un producto
+  sku       String    @unique
+
+ 
+ categoriaId Int @map("categoria_id")
+
+  // Nombre de la relacion
+ categoria Categoria @relation(fields: [categoriaId], references: [id])
+  @@map("productos")
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
