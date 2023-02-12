@@ -10,47 +10,30 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model Categoria {
+  // id entero primari key autoincrementada  
+  id        Int        @id @default(autoincrement()) // @ modifica alguna configuracion de la COLUMNA
+  nombre    String     @db.VarChar(100)
+  productos Producto[]
 
-model Categoria{
-  // id entero primari key autoincrementada
-  // @ modifica alguna configuracion de la COLUMNA
-  id      Int     @id @default(autoincrement()) 
-  nombre  String  @db.VarChar(100)
-
-  productos Producto []
-  // Cambiar el nombre a la tabla con doble @
-  // doble @@ modifica alguna configuracion de la TABLA
-  @@map("categorias")
-
+  // Cambiar el nombre a la tabla con doble @  
+  @@map("categorias") // doble @@ modifica alguna configuracion de la TABLA
 }
 
-model Producto{
-  id        Int       @id       @default(autoincrement())
-  nombre    String
-   // el signo ? sirve para indicar que la columna puede o no tener un valor
-  precio    Float?
-  tieneIgv  Boolean   @map ("tiene_igv")
-  // SKU numero unico de identificacion de un producto
-  sku       String    @unique
+model Producto {
+  id         Int     @id @default(autoincrement())
+  nombre     String
+  // el signo ? sirve para indicar que la columna puede o no tener un valor (esta columna es opcional)
+  precio     Float?
+  tieneIgv   Boolean @map("tiene_igv")
+  sku        String  @unique // SKU numero unico de identificacion de un producto
+  habilitado Boolean @default(true)
 
- 
- categoriaId Int @map("categoria_id")
+  categoriaId Int @map("categoria_id")
 
   // Nombre de la relacion
- categoria Categoria @relation(fields: [categoriaId], references: [id])
+  // el campo es categoriaId y el ID de la referencia es el de la categoria
+  categoria Categoria @relation(fields: [categoriaId], references: [id])
+
   @@map("productos")
-
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
