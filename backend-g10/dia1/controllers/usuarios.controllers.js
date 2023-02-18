@@ -1,36 +1,43 @@
 import bcrypt from "bcryptjs";
-import jwt from "jsonwebtoken"
-
+import jwt from "jsonwebtoken";
+import { UsuarioModel } from "../models/usuario.model.js";
 
 const usuarios = [];
 
 export const registroUsuario = async (req, res) => {
-  // Recibimos los datos del body
+  // {'nombre': 'eduardo', 'apellido': 'de rivero', 'correo': 'ederiveroman@gmail.com', 'password':'Welcome123'}
   const data = req.body;
+  try {
+    const nuevoUsuario = await UsuarioModel.create(data);
 
-  // Encriptar la contraseña , el 10 es el número de vueltas con que se mezclara la cadena de texto
-  const passwordHashed = bcrypt.hashSync(data.password, 10);
-  console.log(passwordHashed);
+    return res
+      .json({
+        message: "Usuario creado exitosamente",
+        content: nuevoUsuario.toJSON(),
+      })
+      .status(201);
+  } catch (error) {
+    if (error.name === "MongoServerError" && error.code === 11000) {
+      return res
+        .json({
+          message: "El usuario ya existe",
+        })
+        .status(400);
+    }
 
-  //TODO reemplazar por la base de datos
-  usuarios.push({ ...data, password: passwordHashed });
-
-  return res
-    .json({
-      message: "Usuario creado exitosamente",
-    })
-    .status(201);
+    return res
+      .json({
+        message: "Error al crear el usuario, intentelo nuevamente",
+      })
+      .status(400);
+  }
 };
 
-
 export const login = async (req, res) => {
+  // { "correo": "ederiveroman@gmail.com", "password": "Welcome123"}
   const data = req.body;
 
-  // TODO reemplazar con la base de datos
-  // encontrar al usuario en el arreglo
-  const usuarioEncontrado = usuarios.find(
-    (usuario) => usuario.correo === data.correo
-  );
+  const usuarioEncontrado = await UsuarioModel.findOne({ correo: data.correo });
 
   if (!usuarioEncontrado) {
     return res.status(404).json({
@@ -43,24 +50,20 @@ export const login = async (req, res) => {
     usuarioEncontrado.password
   );
 
-
-
-
   if (resultado) {
-// Esta es la informacion adicional que usara la token
-const payload = {
-    correo: usuarioEncontrado.correo,
-    mensaje : " hola",
-}
-// Aqui crea la token
-const token = jwt.sign(payload,"clavesecreta", {
-    expiresIn: "1h",
-})
-
+    // es la informacion adicional que usara la token
+    const payload = {
+      correo: usuarioEncontrado.correo,
+      mensaje: "hola",
+    };
+    // aca creo la token
+    const token = jwt.sign(payload, "ultramegasupersecreto", {
+      expiresIn: "1h",
+    });
 
     return res.json({
       message: "Bienvenido",
-      content: token
+      content: token,
     });
   } else {
     return res.status(403).json({
