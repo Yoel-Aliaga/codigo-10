@@ -19,3 +19,18 @@ Cada semana esta en una rama independiente, en la cual se ira detallando a conti
 - Semana 09: <a href="https://github.com/ederivero/backend-g10/tree/semana09">LINK</a>
 - Semana 10: <a href="https://github.com/ederivero/backend-g10/tree/semana10">LINK</a>
 - Semana Adicional: <a href="https://github.com/ederivero/backend-g10/tree/semana">LINK</a>
+
+
+npm i --save-dev dotenv-cli
+
+
+npm install nodemailer
+
+npm i --save-dev @types/nodemailer
+
+//                  SERVIDOR      | PUERTO
+    // outlook > outlook.office365.com | 587
+    // hotmail > smtp.live.com         | 587
+    // gmail >   smtp.gmail.com        | 587
+    // icloud >  smtp.mail.me.com      | 587
+    // yahoo >   smtp.mail.yahoo.com   | 587
