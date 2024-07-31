@@ -38,6 +38,8 @@
     flex-direction: column;
     justify-content: space-around;
     gap: 10px;
+    /* border: 1px solid red; */
+
   }
   
   .productos {
@@ -60,10 +62,12 @@
     gap: 10px ;
   }
   .product:hover {
-    border: 1px solid black;
-    box-shadow: 5px 5px 20px 5px gray ;
+    border: 1px solid gray;
+    box-shadow: 0px 5px 10px 5px rgba(0,0,0,0.2) ;
     cursor: pointer;
-    transform: scale(110%);
+    transform: scale(105%);
+    /* transition: ease 300ms; */
+    transition: all ease-in-out 0.3s;
         
   }
   .product > img {
@@ -75,6 +79,7 @@
     bottom: 0;
     margin: 10px;
     border-radius: 10px;
+    
   
   
   }
@@ -110,46 +115,51 @@
   
   .laptop > h2 {
     color: blue;
+    padding-left: 10px;
   }
   .laptop > h2::before {
-    content: "💻 ";
+    content: "💻 ";    
   }
   .laptop > h3 {
     color: cadetblue;
-    text-align: right;
-    padding-right: 10px;
+    padding-left: 15px;
   }
   
   .celular > h2 {
     color: red;
+    padding-left: 10px;
   }
   .celular > h2::before {
     content: "📱 ";
   }
   .celular > h3 {
     color: brown;
+    padding-left: 15px;
+
   }
   
   .audifono > h2 {
     color: green;
+    padding-left: 10px;
   }
   .audifono > h3 {
-    color: aquamarine;
+    color: gray;
+    padding-left: 10px;
   }
   
   /* Estilos para el formulario */
   .div_form {
     width: 400px;
-    margin: 20px auto;
+    margin: 0px auto;
   }
   
   .div_form > form > input {
     height: 40px;
     border: 1px solid #ccc;
     border-radius: 20px;
-    width: 70%;
+    width: 60%;
     font-size: 20px;
-    padding-left: 20px;
+    padding-left: 2px;
     outline: none;
   }
   
@@ -163,6 +173,7 @@
     border-radius: 20px;
     width: 28%;
     outline: none;
+    margin-bottom: 5px;
   }
   .div_form > form > button:hover {
     background-color: #666;
@@ -177,7 +188,7 @@
   /* Pseudo-elementos */
   .price::before {
     content: "$ ";
-    font-size: 12px;
+    font-size: 12px;    
   }
   .price::after {
     content: ".00";
